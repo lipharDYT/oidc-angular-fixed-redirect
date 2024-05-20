@@ -338,9 +338,8 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
                 var localRedirect = $localStorage['localRedirect'];
                 
                 if (localRedirect) {
-                    var redirectTo = localRedirect.hash.substring(1);
                     delete $localStorage['localRedirect'];
-                    $location.path(redirectTo);
+                    $location.path(localRedirect);
                 }
                 else {
                     $location.path('/');
